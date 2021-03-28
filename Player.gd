@@ -30,6 +30,9 @@ func _input(event):
 		$Camera2D.zoom -= ZOOM_STEP
 		clamp_zoom()
 
+	if event.is_action_released('quit'):
+		get_tree().quit()
+
 func clamp_zoom():
 	$Camera2D.zoom.x = clamp($Camera2D.zoom.x, 1.6, 5)
 	$Camera2D.zoom.y = $Camera2D.zoom.x
